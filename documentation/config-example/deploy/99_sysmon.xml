@@ -1,0 +1,6 @@
+<sysmon logger="Q2">
+ <!-- Environment: '@target@' -->
+ <attr name="sleepTime" type="java.lang.Long">600000</attr> <!-- log every 10 minutes-->
+ <attr name="detailRequired" type="java.lang.Boolean">true</attr>
+</sysmon>
+

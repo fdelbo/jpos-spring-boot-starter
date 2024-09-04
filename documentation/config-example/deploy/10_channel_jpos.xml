@@ -1,0 +1,17 @@
+<channel-adaptor name='jpos-channel' class="org.jpos.q2.iso.ChannelAdaptor" logger="Q2">
+
+    <channel class="org.jpos.iso.channel.PostChannel" packager="org.jpos.iso.packager.PostPackager">
+        <property name="host" value="${jpos.host}" />
+        <property name="port" value="${jpos.port}" />
+
+        <filter class="custom.ar.fdelbo.jpos.JPOSChannelLoggingFilter" direction="both">
+            <property name="debugMode" value="${jpos.debug}" />
+            <property name="adapterName" value="${jpos.adapter-name}" />
+        </filter>
+    </channel>
+
+    <in>jpos-send</in>
+    <out>jpos-receive</out>
+    <reconnect-delay>10000</reconnect-delay>
+
+</channel-adaptor>
