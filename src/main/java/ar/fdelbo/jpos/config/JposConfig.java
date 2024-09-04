@@ -24,22 +24,22 @@ public class JposConfig {
     public static final String JPOS_PROPERTIES_KEY = "JposProperties";
     private static final String QMUX_NAME = "jpos-multiplexer";
 
-    private Q2 Q2_SERVER;
+    private Q2 q2Server;
 
     @Bean
     public Q2 q2(final Environment environment, final JposStarterProperties jposStarterProperties) {
         configureJposProperties(environment);
 
         final var deployPath = new ClassPathResource(jposStarterProperties.getDeployPath()).getPath();
-        Q2_SERVER = new Q2(deployPath);
-        Q2_SERVER.start();
+        q2Server = new Q2(deployPath);
+        q2Server.start();
 
         //blocks up to 10 seconds until q2 server is ready
-        if(!Q2_SERVER.ready(10000)) {
+        if(!q2Server.ready(10000)) {
             throw new RuntimeException("Q2 Server is not ready");
         }
 
-        return Q2_SERVER;
+        return q2Server;
     }
 
     @Bean
@@ -49,8 +49,8 @@ public class JposConfig {
 
     @PreDestroy
     public void preDestroy() {
-        if(Q2_SERVER.running()) {
-            Q2_SERVER.shutdown(true);
+        if(q2Server.running()) {
+            q2Server.shutdown(true);
         }
     }
 
