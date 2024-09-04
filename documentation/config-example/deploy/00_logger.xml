@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <logger name="Q2" class="org.jpos.q2.qbean.LoggerAdaptor">
-  <log-listener class="custom.ar.fdelbo.jpos.JPOSLogListener" />
+  <log-listener class="ar.fdelbo.jpos.JPOSLogListener" />
 </logger>

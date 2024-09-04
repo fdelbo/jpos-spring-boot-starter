@@ -4,7 +4,7 @@
         <property name="host" value="${jpos.host}" />
         <property name="port" value="${jpos.port}" />
 
-        <filter class="custom.ar.fdelbo.jpos.JPOSChannelLoggingFilter" direction="both">
+        <filter class="ar.fdelbo.jpos.JPOSChannelLoggingFilter" direction="both">
             <property name="debugMode" value="${jpos.debug}" />
             <property name="adapterName" value="${jpos.adapter-name}" />
         </filter>
