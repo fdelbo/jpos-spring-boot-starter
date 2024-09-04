@@ -10,7 +10,7 @@ Integrate this starter in your project and start sending/receiving ISO-8583 mess
 Here you can download the [jPOS Developer Manual](https://jpos.org/doc/proguide.pdf)
 
 ## Configuration
-In order to use this starter you must:
+In order to use this starter you should:
 
 1. Add this spring config into `application.properties`
 ```yaml
